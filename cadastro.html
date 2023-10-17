@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" 
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="img/logo3.png" type="image/x-icon">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Cadastre-se</title>
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto+Mono:wght@200;300;400;500;600;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .login{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #E4C5D1;
+            width: 100%;
+            height: 81vh;
+        }
+        .pai{
+            width: 80%;
+            height: 50vh;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #E4C5D1;box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        .filho{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+        .image{
+            border-radius: 10px;
+            width: 40%;
+        }
+        .login-container {
+            width: 40%;
+            border-radius: 10px;
+            padding: 20px 20px;
+        }
+
+        .login-container h2 {
+            text-align: left;
+        }
+
+        input{
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .login-button {
+            width: 100px;
+            background-color: #E4C5D1;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            color: #832a41;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: black;
+        }
+        header{
+            margin: 30px 0;
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            z-index: 999;/* arruma o problema de sobrepor, quando abre o menu os itens da body não aparece. */
+        }
+        header img{
+            width: 130px;
+        }
+        nav ul{
+            display: flex;
+        }
+        nav ul a{
+            color: #832a41;
+            margin: 0 20px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        nav ul a:not(.btn)::after{
+            content: "";
+            background-color: #832a41;
+            height: 3px;
+            width: 0%;
+            display: block;
+            margin: 0 auto;
+            transition: 0.3s;
+        }
+        nav ul a:hover::after{
+            width: 100%;
+        }
+        nav .menu-icon{
+            cursor: pointer;
+            font-size: 25px;
+            color: white;
+            display: none;
+        }
+        nav .close-icon{
+            display: none;
+            font-size: 30px;
+            color: white;
+        }
+        .animated-link {
+            position: relative;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .animated-link::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0px;
+            left: 0;
+            transform: scaleX(0); /* Começa com largura zero */
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .animated-link:hover {
+            color: #832a41;
+        }
+        .animated-link:hover::before {
+            transform: scaleX(1); /* Expandindo para largura total */
+        }
+        footer {
+            padding-bottom: 60px;
+            color: #fff;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .social {
+            display: flex;
+            justify-content: center;
+        }
+        .social a {
+            color: #fff;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .social a:hover {
+            color: #00a0e9;
+        }
+        .footer-links p{
+            color: black;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .ds-by {
+            color: #003cff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: black;
+        }
+        @media screen and (max-width: 768px){
+            .filho{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            .login-container{
+                width: 100%;
+            }
+            .image{
+                width: 90%;
+            }
+            .ul{
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: white;
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                clip-path: circle(0.0% at 98% 2%);
+                transition: 0.90s;
+                z-index: 999;
+            }
+            .ul.open{
+                clip-path: circle(139.7% at 99% 1%);
+            }
+            .ul a{
+                font-size: 30px;
+            }
+            nav .menu-icon{
+                color: #832a41;
+                padding-right: 15px;
+                display: block;
+            }   
+            nav .close-icon{
+                cursor: pointer;
+                display: block;
+                position: absolute;
+                top: 46px;
+                right: 28px;
+                color: #832a41;
+            }
+
+        }
+    </style>
+<body>
+    <header><!-- Head -->
+        <a href="index.html"><img src="img/logonl1.png" alt=""></a><!-- Logo -->
+        <div>
+            <nav><!-- links -->
+                <ul class="ul">
+                    <a href="index.html">Home</a>
+                    <a href="login.html">Login</a>
+                    <div class="close-icon" onclick="closeMenu()">
+                        <i class="fa fa-times-circle" aria-hidden="true"></i> 
+                    </div>
+                </ul>
+                <div class="menu-icon" onclick="openMenu()">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="login">
+            <div class="filho">
+                <div class="login-container">
+                    <h2>Cadastre-se</h2>
+                    <form action="processar_cadastro.php" method="post">
+                        <div class="form-group">
+                            <input type="text" id="username" name="username" placeholder="Nome de Usuário" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="E-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" name="password" placeholder="Senha" required>
+                        </div>
+                    </form>
+                    <div class="botao">
+                        <button class="login-button" type="submit">Cadastrar</button>
+                    </div>
+                </div>
+                <img class="image" src="img/bk5.JPG" alt="">
+            </div>
+    </section>  
+    <footer> 
+        <div class="footer-content">
+            <div class="social">
+                <a href="https://www.facebook.com/profile.php?id=100078958445691&mibextid=LQQJ4d"><i class="fa fa-facebook"></i></a>
+                <a href="https://wa.me/5587988658732?text=Ol%C3%A1%2C+vim+atrav%C3%A9s+do+seu+site%2C+preciso+de+mais+informa%C3%A7%C3%B5es."><i class="fa fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/donnamaypijamas/?igshid=MzRlODBiNWFlZA%3D%3D"><i class="fa fa-instagram"></i></a>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2023 Donna May Pijamas. Todos os direitos reservados.</p>
+                <p>Design by <a class="ds-by" href="https://wa.me/87992026551">Vinícius</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
+  

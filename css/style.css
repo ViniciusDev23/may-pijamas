@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto+Mono:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+
+}
+body{
+    background-image: url(../img/background.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+}
+#masculino{
+    background-image: url(../img/backmasculino.png);
+}
+#masculino nav ul a{
+    color: #011453;
+}
+#masculino nav ul a:not(.btn)::after{
+    background-color: #011453;
+}
+
+section{
+    width: 80%;
+}
+header{
+    margin: 30px 0;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    z-index: 999;/* arruma o problema de sobrepor, quando abre o menu os itens da body não aparece. */
+}
+header img{
+    width: 130px;
+}
+nav ul{
+    display: flex;
+}
+nav ul a{
+    color: #832a41;
+    margin: 0 20px;
+    font-size: 18px;
+    text-decoration: none;
+}
+nav ul a:not(.btn)::after{
+    content: "";
+    background-color: #832a41;
+    height: 3px;
+    width: 0%;
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+nav ul a:hover::after{
+    width: 100%;
+}
+nav .menu-icon{
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+    display: none;
+}
+nav .close-icon{
+    display: none;
+    font-size: 30px;
+    color: white;
+}
+.animated-link {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.animated-link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+    transform: scaleX(0); /* Começa com largura zero */
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+.animated-link:hover {
+    color: #832a41;
+}
+.animated-link:hover::before {
+    transform: scaleX(1); /* Expandindo para largura total */
+}
+/* section links-pai */
+.container-sl{
+    box-shadow: 0px 16px 21px -11px rgba(0,0,0,0.5);
+    width: 80%;
+    height: 85vh;
+    position: absolute;
+    animation: animate 16s ease-in-out infinite;
+    background-size: cover;
+}
+@keyframes animate{
+    0%,100%{
+        background-image: url(../img/Prancheta\ 10.png);
+    }
+    25%{
+        background-image: url(../img/Prancheta\ 4.png);
+    }
+    50%{
+        background-image: url(../img/Prancheta\ 3.png);
+    }
+    75%{
+        background-image: url(../img/Prancheta\ 5.png);
+    }
+}
+/*  */
+.botoes-guia{
+    width: 100%;
+    display: flex;
+}
+.botoes-guia,.botoes-guia-filho{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.botoes-guia-filho a{
+    padding: 0 10px;
+    
+    text-decoration: none;
+    color: #832a41;
+}
+/*  */
+.depoimentos{
+    width: 100%;
+    margin-top: 900px;
+    text-align: center;
+}
+h1{ 
+    font-size: 60px;
+    color: #832a41;
+}
+h4{
+    font-size: 18px;
+    color: #832a41;
+}
+h5{
+    width: 40%;
+    font-size: 20px;
+    margin-top: 18px;
+    margin-left: 30px;
+}
+.container-slider{
+    overflow:hidden;
+    padding:40px 0;   
+}
+.container-slider-single img{
+    width: 100%;
+    height: 85%;
+    border-radius: 5px;
+}
+.container-slider-single{
+    height: 700px;
+    float: left;
+    background-color: #E4C5D1;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding:15px;
+    border-radius:10px;
+}
+.container-slider-single p{
+    background-color: greenyellow;
+    width: 50%;
+    font-size: 20px;
+    margin: -30px 0px 0px 190px;
+    font-style: italic;
+}
+.container-slider-single h3{
+    color: #000000;
+    font-size: 20px;
+}
+.container-slider-single i{
+    margin-top: 25px;
+}
+.slick-slide {
+    margin-left:27px;
+}
+.slick-list {
+    margin-left:-27px;
+}
+.slick-dotted ul{
+    display: block;
+	list-style-type: none;
+	text-align: center;
+	position: relative;
+	top:30px;
+}
+.slick-dotted li{
+	display: inline-block;
+	margin: 0 7px;
+}
+.slick-dotted button:focus{
+	outline: 0;
+}
+.slick-dotted li button{
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	color: #832a41;
+	border-width: 0;
+	background: #832a41;
+	opacity: 1;
+	cursor: pointer;
+}
+li.slick-active button{
+	background: #bda3ad;
+	color: #bda3ad;
+}
+.slick-slide:focus { 
+    outline: none; 
+}
+/* section 3 */
+.section-03,.section-04{
+    width: 100%;
+    text-align: center;
+}
+/* atacado */
+.atacado{
+    width: 100%;
+}
+.atacado-pai{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.atacado-texto{
+    margin-top: 150px;
+    width: 40%;
+}
+h2{
+    font-size: 40px;
+    color: #832a41;
+}
+.atacado-imagens{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 40%;
+}
+.atacado-imagens img{
+    width: 100%;
+}
+/* footer */
+footer {
+    margin-top: 60px;
+    padding-bottom: 60px;
+    color: #fff;
+    text-align: center;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+}
+.social {
+    display: flex;
+    justify-content: center;
+}
+.social a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+.social a:hover {
+    color: #00a0e9;
+}
+.footer-links p{
+    color: black;
+    text-align: center;
+    margin-top: 10px;
+}
+.ds-by {
+    color: #003cff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: black;
+}
+/* pagina sobre */
+.sobre-nos{
+    margin-top: 150px;
+    width: 100%;
+}
+.sobre-nos,.avo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sobre-nos,.imagem{
+    width: 40%;
+}
+.sobre-nos,.texto{
+    width: 100%;
+    margin-left: 50px;
+}
+/* fim da pagina sobre */
+/* pagina contato */
+.contato{
+    width: 100%;
+    margin-top: 100px;
+}
+.contato,.avo{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.form{
+    width: 40%;
+}
+input{
+    border-radius: 3px;
+    border: 1px solid;
+    width: 100%;
+    padding: 10px 10px;
+}
+textarea{
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid;
+    border-radius: 3px;
+    resize: none;
+}
+.butao-contato{
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 16px 21px -11px rgba(0,0,0,0.5);
+    background-image: url(../img/background.png);
+}
+/* button direcionais */
+.menu-button{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+    header img{
+        width: 100px;
+    }
+    .ul{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        clip-path: circle(0.0% at 98% 2%);
+        transition: 0.90s;
+        z-index: 999;
+    }
+    .ul.open{
+        clip-path: circle(139.7% at 99% 1%);
+    }
+    .ul a{
+        margin: 10px 0;
+        font-size: 30px;
+    }
+    nav .menu-icon{
+        color: #832a41;
+        padding-right: 15px;
+        display: block;
+        
+    }   
+    nav .close-icon{
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 46px;
+        right: 28px;
+        color: #832a41;
+    }
+    /* links */
+    .menu-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centralize o conteúdo verticalmente */
+        padding: 10px;
+        margin-top: -50PX;
+    }
+    
+    .menu-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: #832a41;
+        z-index: 2;
+    }
+    
+    .menu-button #text {
+        margin-right: 10px; /* Espaço entre o texto e o ícone */
+    }
+    
+    /* Estilos para os links */
+    .botoes-guia {
+        overflow: hidden;
+        transition: all 0.5s ease;
+        display: block;
+        clip-path: polygon(35% 0, 65% 0, 100% 0, 0 0);
+        position: absolute;
+        z-index: 1;
+        width: 100%; /* Ocupa toda a largura da tela */
+        background-color: white; /* Cor de fundo para cobrir a seção abaixo */
+    }
+    
+    .botoes-guia.open {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    .botoes-guia-filho {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+    
+    .botoes-guia-filho a {
+        font-size: 20px;
+        margin: 5px 0;
+        transition: opacity 0.3s ease;
+    }
+    /* slide principal */
+    .container-sl{
+        width: 100%;
+        margin-left: -10.2%;
+    }
+    /* slides */
+    .depoimentos,.section-03,.section-04{
+        width: 100%;
+        text-align: center;
+    }
+    h1{
+        font-size: 50px;
+    }
+    h4{
+        font-size: 16px;
+    }
+    .atacado{
+        width: 100%;
+    }
+    .atacado-pai{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .atacado-texto{
+        width: 100%;
+    }
+    .atacado-imagens{
+        width: 100%;
+    }
+    /* pagina sobre */
+    .sobre-nos{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .avo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .imagem,.texto{
+        width: 100%;
+        margin-left: -100px;
+    }
+    .imagem img{
+        width: 100%;
+    }
+    p{
+        width: 100%;
+        margin-top: 20px;
+    }
+    footer{
+        width: 100%;
+    }
+    /*  */
+}

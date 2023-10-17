@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" 
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="img/logo3.png" type="image/x-icon">
+        <title>Moda Masculina May</title>
+    </head>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto+Mono:wght@200;300;400;500;600;700&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+
+    }
+    body{
+        background-image: url(./img/backmasculino.png);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 80%;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    section{
+        width: 80%;
+    }
+    header{
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        z-index: 999;/* arruma o problema de sobrepor, quando abre o menu os itens da body não aparece. */
+    }
+    header img{
+        width: 130px;
+    }
+    nav ul{
+        display: flex;
+    }
+    nav ul a{
+        color: #020063;
+        margin: 0 20px;
+        font-size: 18px;
+        text-decoration: none;
+    }
+    nav ul a:not(.btn)::after{
+        content: "";
+        background-color: #020063;
+        height: 3px;
+        width: 0%;
+        display: block;
+        margin: 0 auto;
+        transition: 0.3s;
+    }
+    nav ul a:hover::after{
+        width: 100%;
+    }
+    nav .menu-icon{
+        cursor: pointer;
+        font-size: 25px;
+        color: white;
+        display: none;
+    }
+    nav .close-icon{
+        display: none;
+        font-size: 30px;
+        color: white;
+    }
+    .animated-link {
+        position: relative;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    .animated-link::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0px;
+        left: 0;
+        transform: scaleX(0); /* Começa com largura zero */
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+    .animated-link:hover {
+        color: #832a41;
+    }
+    .animated-link:hover::before {
+        transform: scaleX(1); /* Expandindo para largura total */
+    }
+    .container-sl{
+    box-shadow: 0px 16px 21px -11px rgba(0,0,0,0.5);
+    width: 80%;
+    height: 90vh;
+    position: absolute;
+    animation: animate 16s ease-in-out infinite;
+    background-size: cover;
+    }
+    @keyframes animate{
+        0%,100%{
+            background-image: url(./img/bk2.JPG);
+        }
+        25%{
+            background-image: url(./img/bk3.JPG);
+        }
+        50%{
+            background-image: url(./img/bk4.JPG);
+        }
+        75%{
+            background-image: url(./img/bk5.JPG);
+        }
+    }
+    .botoes-guia{
+        margin-top: 800px;
+        width: 100%;
+        display: flex;
+    }
+    .botoes-guia,.botoes-guia-filho{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+    .botoes-guia-filho a{
+        padding: 0 10px;
+        
+        text-decoration: none;
+        color: #020063;
+    }
+    a:hover {
+        color: white;
+    }
+    @media screen and (max-width: 768px){
+        header img{
+            width: 100px;
+        }
+        .ul{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            clip-path: circle(0.0% at 98% 2%);
+            transition: 0.90s;
+            z-index: 999;/* arruma o problema de sobrepor, quando abre o menu os itens da body não aparece. */
+        }
+        .ul.open{
+            clip-path: circle(139.7% at 99% 1%);
+        }
+        .ul a{
+            margin: 10px 0;
+            font-size: 30px;
+        }
+        a:hover{
+            color: black;
+        }
+        nav .menu-icon{
+            color: #020063;
+            padding-right: 15px;
+            display: block;
+            
+        }   
+        nav .close-icon{
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            top: 46px;
+            right: 28px;
+            color:#020063;
+        }  
+        /* botoes-guia */
+        .botoes-guia{
+            display: none;
+        }
+        /* slide principal */
+        .container-sl{
+            box-shadow: 0px 16px 21px -11px rgba(0,0,0,0.5);
+            width: 80%;
+            height: 90%;
+            position: absolute;
+            animation: animate 16s ease-in-out infinite;
+            background-size: cover;
+        }
+        @keyframes animate{
+            0%,100%{
+                background-image: url(../img/IMG_3163.jpg);
+            }
+            25%{
+                background-image: url(../img/IMG_3143.jpg);
+            }
+            50%{
+                background-image: url(../img/IMG_3120.jpg);
+            }
+            75%{
+                background-image: url(../img/IMG_3111.jpg);
+            }
+        }
+    
+    }
+    /*  */
+    </style>
+    <body>
+        <header><!-- Head -->
+            <a href="index.html"><img src="img/logonl3.png" alt=""></a><!-- Logo -->
+            <div>
+                <nav><!-- links -->
+                    <ul class="ul">
+                        <a href="#">Home</a>
+                        <a href="cadastro.html">Cadastre-se</a>
+                        <a href="login.html">Login</a>
+                        <a href="masculino.html">Moda Masculina</a>
+                        <a href="sobre.html">Sobre Nós</a>
+                        <a href="contato.html">Contato</a>
+                        <a href="#">Loja</a>
+                        <div class="close-icon" onclick="closeMenu()">
+                            <i class="fa fa-times-circle" aria-hidden="true"></i> 
+                        </div>
+                    </ul>
+                    <div class="menu-icon" onclick="openMenu()">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="container-sl"><!-- Body one -->
+            <div class="bodytwo-text"><!-- Text -->
+                <h1></h1>
+            </div>
+        </section>
+
+        <section class="botoes-guia">
+            <div class="botoes-guia-filho">
+                <a href="botoes/lancamento.html">Lançamentos</a>
+                <a href="botoes/pijamas.html">Pijamas </a>
+                <a href="botoes/confort.html">Confort</a>
+                <a href="botoes/romantico.html">Romântico</a>
+                <a href="botoes/infantil.html">Infantil</a>
+                <a href="botoes/estacao.html">Estações do ano</a>
+                <a href="botoes/verao.html">Verão</a>
+                <a href="botoes/inverno.html">Inverno</a>
+                <a href="botoes/promocao.html">Promoções</a>
+                <a href="botoes/pantufa.html">Pantufa</a>
+                <a href="botoes/acessorios.html">Acessórios</a>
+                <a href="botoes/presente.html">Kit presentes</a>
+                <a href="botoes/familia.html">familia</a>
+            </div>
+        </section>
+    
+       <footer> 
+            <div class="footer-content">
+                <div class="social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+                <div class="footer-links">
+                    <p>&copy; 2023 Donna May Pijamas. Todos os direitos reservados.</p>
+                    <p>Design by <a class="ds-by" href="https://wa.me/87992026551">Vinícius</a></p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
